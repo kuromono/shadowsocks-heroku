@@ -37,6 +37,9 @@ if (process.env.KEY) {
 if (process.env.METHOD) {
   config['method'] = process.env.METHOD;
 }
+if (process.env.TIMEOUT) {
+  config['timeout'] = process.env.TIMEOUT;
+}
 
 for (let k in configFromArgs) {
   const v = configFromArgs[k];
@@ -55,7 +58,7 @@ if (['', 'null', 'table'].includes(METHOD.toLowerCase())) {
 
 const server = http.createServer(function(req, res) {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('asdf.');
+  res.end('manaka');
 });
 
 const wss = new WebSocketServer({ server });
